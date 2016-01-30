@@ -2,6 +2,6 @@
 
 int main(void)
 {
-  write("Hello, C");
+  write(1, "Hello, C\n", 9);
   return (0);
 }
