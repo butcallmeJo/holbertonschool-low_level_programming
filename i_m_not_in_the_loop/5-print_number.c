@@ -17,7 +17,7 @@ void print_number(int n)
     {
       print_char('0');
     }
-  else
+  else if (n > 0)
     {
       while (q != 0)
 	{
@@ -28,7 +28,7 @@ void print_number(int n)
 	    }
 	  q = p;
 	}
-      while (x >= 10)
+      while (r/10 > 0)
 	{
 	  r = r/x;
 	  r = r + '0';
@@ -40,4 +40,28 @@ void print_number(int n)
 	  
 	}
     }
+  else
+    {
+      while (q != 0)
+        {
+          p = q/10;
+          if (p != 0)
+            {
+              x = x*10;
+            }
+          q = p;
+        }
+      while (r/10 < 0)
+        {
+          r = r/x;
+          r = r + '0';
+          print_char(r);
+          if ( x >= 10)
+            {
+              x = x/10;
+            }
+
+        }
+    }
+
 }
