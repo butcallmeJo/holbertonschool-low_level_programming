@@ -12,11 +12,10 @@ void print_number(int n)
   int r = n;
   int x = 1;
   int p = q;
-  char c = r;
-  if (0 == n)
+  /*char c = r;*/
+  if (n == 0)
     {
       print_char('0');
-      print_char('\n');
     }
   else
     {
@@ -29,16 +28,16 @@ void print_number(int n)
 	    }
 	  q = p;
 	}
-      while (r >= 1)
+      while (x >= 10)
 	{
 	  r = r/x;
-	  c = r;
-	  print_char(c);
-	  print_char('\n');
+	  r = r + '0';
+	  print_char(r);
 	  if ( x >= 10)
 	    {
 	      x = x/10;
 	    }
+	  
 	}
     }
 }
