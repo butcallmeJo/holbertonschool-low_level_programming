@@ -2,40 +2,64 @@
 #include <unistd.h>
 #include <stdio.h>
 
-int print_char(char c);
-
-void print_number(int n)
+void print_positive(int n)
 {
   int digits = 1;
   int power = 1;
   int ncopy = n;
-  
-  if (n == 0)
-    {
-      /*print_char('0');*/
-    }
-  else if (n < 0)
-    {
-      ncopy = n * -1;
-    }
-  
+  char charout;
+  int nless;
+
   for (; ncopy != 0; digits++)
     {
       ncopy = ncopy/10;
       power = power*10;
     }
+
   digits--;
   power = power / 10;
-  printf("%d \n", digits);
-  printf("%d \n", power);
+  ncopy = n;
 
+  for (; digits > 0; digits--)
+    {
+      ncopy = nless/power;
+      charout = ncopy+'a';
+      nless = nless%power;
+      power = power/10;
+      print_char(charout);
+    }
 }
 
+void print_number(int n)
+{
+  int ncopy = n;
+
+  if (n == 0)
+    {
+      print_char('0');
+    }
+  else if (n < 0)
+    {
+      ncopy = n * -1;
+      print_char('-');
+      print_positive(ncopy);
+    }
+  else
+    {
+      print_positive(ncopy);
+    }
+
+}
+/*
 void main(void)
 {
-  print_number(98);
-  print_number(2);
+  print_number(1024);
+  print_number(123456789);
+  print_number(0);
+  print_number(-524);
 }
+*/
+
 /*
   
   4123
