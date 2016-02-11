@@ -8,7 +8,7 @@ void print_positive(int n)
   int power = 1;
   int ncopy = n;
   char charout;
-  int nless;
+  int nless = n;
 
   for (; ncopy != 0; digits++)
     {
@@ -23,7 +23,7 @@ void print_positive(int n)
   for (; digits > 0; digits--)
     {
       ncopy = nless/power;
-      charout = ncopy+'a';
+      charout = ncopy+'0';
       nless = nless%power;
       power = power/10;
       print_char(charout);
