@@ -1,6 +1,4 @@
 #include "my_functions.h"
-#include <unistd.h>
-#include <stdio.h>
 
 void print_positive(int n)
 {
@@ -50,22 +48,3 @@ void print_number(int n)
     }
 
 }
-/*
-void main(void)
-{
-  print_number(1024);
-  print_number(123456789);
-  print_number(0);
-  print_number(-524);
-}
-*/
-
-/*
-  
-  4123
-  412
-  41
-  4
-  0
-  
- */
