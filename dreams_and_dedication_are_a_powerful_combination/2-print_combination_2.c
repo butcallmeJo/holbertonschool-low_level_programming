@@ -4,7 +4,8 @@ void print_combination_2(void)
 {
   char c;
   int num;
-  int char;
+  int ;
+  char c;
 
   
 
