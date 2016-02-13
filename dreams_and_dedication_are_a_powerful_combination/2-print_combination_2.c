@@ -4,10 +4,26 @@
 /* prints all possible combinations of 2 different digits */
 void print_combination_2(void)
 {
-  char c1, c2;
-  int num, d1, d2;
-
-  
+  int d1, d2, num;
+  num = -1;
+  for (d1=0; d1<9; d1++)
+    {
+      for (d2=0; d2<=9; d2++)
+	{
+	  num++;
+	  if (d1 >= d2) {continue;}
+	  else
+	    {
+	      print_char(d1+'0');
+	      print_char(d2+'0');
+	    }
+	  if (num < 89)
+	    {
+	      print_char(',');
+	      print_char(' ');
+	    }
+	}
+    }
 
 }
 
@@ -41,7 +57,6 @@ OR OR OR OR OR
 
       if n1 >= n2
         continue
-      else if
       else
         print_char n1
 	print_char n2

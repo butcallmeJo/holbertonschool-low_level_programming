@@ -1,7 +1,7 @@
 /* My_functions.h contains all functions used in all files in this directory */
 #include "my_functions.h"
 
-/* prints any integer without using the std library */
+/* prints an integer from a negative integer without using the std library */
 void print_negative(int n)
 {
   int digits, power, ncopy, nless;
