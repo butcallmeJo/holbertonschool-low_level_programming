@@ -5,7 +5,7 @@
 void print_combination_2(void)
 {
   int d1, d2, num;
-  num = -1;
+  num = 0;
   for (d1=0; d1<9; d1++)
     {
       for (d2=0; d2<=9; d2++)
@@ -17,7 +17,7 @@ void print_combination_2(void)
 	      print_char(d1+'0');
 	      print_char(d2+'0');
 	    }
-	  if (num < 89)
+	  if (num <= 89)
 	    {
 	      print_char(',');
 	      print_char(' ');
