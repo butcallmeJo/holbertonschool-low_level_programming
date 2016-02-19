@@ -3,16 +3,14 @@
 
 int print_char(char c);
 
-void find_last_negative(int n)
+void print_last_digit(int n)
 {
-  int digits, ncopy;
-  ncopy = n;
+  int lastdigit;
   
-  for (digits=1; ncopy!=0; digits++)
+  if (n<0)
   {
-    ncopy = ncopy/10;
+    n = n*-1;
   }
-  /*print_char((n%digits)+'0');*/
-  printf("%d", digits);
-  
+  lastdigit = n%10;
+  print_char(lastdigit+'0');
 }
