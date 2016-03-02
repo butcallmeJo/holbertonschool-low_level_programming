@@ -1,5 +1,6 @@
-int print_char(char c);
+#include <stdio.h>
 
+/* function to print n triangles of h height */
 void triangles_in_the_term(int h, int n)
 {
   int star, space, hcopy, starcopy, spacecopy;
@@ -16,16 +17,16 @@ void triangles_in_the_term(int h, int n)
       space=spacecopy;
       for(; space>0; space--)
       {
-	print_char(' ');
+	printf(" ");
       }
       spacecopy--;
       star=starcopy;
       while(star<(hcopy*2))
       {
-	print_char('*');
+	printf("*");
 	star++;
       }
-      print_char('\n');
+      printf("\n");
     }
   }
 }
