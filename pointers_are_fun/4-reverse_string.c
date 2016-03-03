@@ -3,7 +3,7 @@
 void reverse_string(char *s)
 {
   int count, count2;
-  char scopy[10];
+  char scopy[30];
   count=0;
   count2=0;
   while (s[count]!='\0')
