@@ -2,42 +2,25 @@
 
 int string_to_integer(char *s)
 {
-  int count, start, end, sign, num, len, power;
-  count = start = end = num = len = 0;
-  sign = power = 1;
-
-  while (s[count]!='\0' && (s[count] <'0' || s[count]>'9'))
+  int count, sign, boolean;
+  long num;
+  count = num = 0;
+  sign = boolean = 1;
+  while (s[count]!='\0') 
   {
-    if (s[count]=='-')
+    if (s[count] <'0' || s[count]>'9')
     {
-      sign *= -1;
+      if (s[count]=='-') {sign*=-1;}
+      if (boolean==0) {break;}
+    }
+    if (s[count] >='0' && s[count]<='9')
+    {
+      num = 10 * num + (s[count]-48);
+      boolean = 0;
     }
     count++;
-    start++;
-  }
-  end = start;
-
-  while (s[count]!='\0' && (s[count] >='0' && s[count]<='9'))
-  {
-    count++;
-    end++;
-  }
-
-  len = end-start;
-  while (len>0)
-  {
-    power = power * 10;
-    len--;
-  }
-  power = power/10;
-  count = start;
-
-  while (power>0)
-  {
-    num = 10*num + (s[count]-48);
-    power = power / 10;
-    count++;
-  }
-  num*=sign;
-  return(num);
+  }  
+  num = sign*num;
+  if (num > 2147483647 || num < -2147483648) {num=0;}
+  return((int)num);
 }

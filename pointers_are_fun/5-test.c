@@ -5,7 +5,7 @@ int main(void)
 {
   int n;
 
-  n = string_to_integer("-98");
+  n = string_to_integer("-----98");
   printf("%d\n", n);
   n = string_to_integer("987");
   printf("%d\n", n);
