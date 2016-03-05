@@ -1,22 +1,20 @@
-#include <stdio.h>
-
 int string_to_integer(char *s)
 {
-  int count, sign, boolean;
+  int count, sign, flag;
   long num;
-  count = num = 0;
-  sign = boolean = 1;
+  count = num = flag = 0;
+  sign = 1;
   while (s[count]!='\0') 
   {
     if (s[count] <'0' || s[count]>'9')
     {
+      if (flag==1) {break;}
       if (s[count]=='-') {sign*=-1;}
-      if (boolean==0) {break;}
     }
-    if (s[count] >='0' && s[count]<='9')
+    else /*(s[count] >='0' && s[count]<='9')*/
     {
       num = 10 * num + (s[count]-48);
-      boolean = 0;
+      flag = 1;
     }
     count++;
   }  

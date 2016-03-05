@@ -25,7 +25,7 @@ int main(void)
   printf("%d\n", n);
   n = string_to_integer("      +    +   -   -98 Battery Street; San Francisco, CA 94111 - USA         ");
   printf("%d\n", n);
-  n = string_to_integer("----++++ - Sui - te -  402 #cisfun :)");
+  n = string_to_integer("-----++++ - Sui - te -  402 #cisfun :)");
   printf("%d\n", n);
   return (0);
 }
