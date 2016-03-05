@@ -3,7 +3,7 @@ void reverse_string(char *s);
 
 int main(void)
 {
-  char s[21] = "Holberton is awesome";
+  char s[20] = "Holberton is awesom";
 
   printf("%s\n", s);
   reverse_string(s);
