@@ -4,11 +4,15 @@ int print_char(char c);
 void print_num(int n);
 void print_negative(int n);
 
+/*prints each element of an array of integers.*/
 void print_array(int *a, int n)
 {
   int i;
+
+  /*loop goes thru the array and calls print_num*/
   for (i=0; i<n; i++)
   {
+    /*to know when to print commas and spaces after print_num is called*/
     if (i!=n-1) {
       print_num (a[i]);
       print_char(',');
