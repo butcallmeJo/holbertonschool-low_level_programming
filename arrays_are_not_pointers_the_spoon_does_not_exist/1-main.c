@@ -1,4 +1,4 @@
-void print_string_2(char *str);
+void print_string_half(char *str);
 
 int main(void)
 {
