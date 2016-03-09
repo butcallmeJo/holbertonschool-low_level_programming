@@ -3,10 +3,18 @@ int print_char(char c);
 /*function to print the second half of the string*/
 void print_string_half(char *str)
 {
-  int i, c;
+  int i, h=0;
+
+  /*loop to find the length of the array*/
   for (i = 0; str[i] != '\0'; i++) {}
-  for (c=(i/2)+1; c<i; c++)
+
+  /*setting the halfway point depending on even or odd i*/
+  if (i%2==0) {h=i/2;}
+  else {h=(i/2)+1;}
+
+  /*loop to print the chars starting at the halfway point*/
+  for (; h<i; h++)
   {
-    print_char(str[c]);
+    print_char(str[h]);
   }
 }
