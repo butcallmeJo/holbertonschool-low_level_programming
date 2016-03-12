@@ -8,7 +8,11 @@ void print_negative(int n);
 void print_array(int *a, int n)
 {
   int i;
-
+  if (n==0)
+  {
+    print_char('\n');
+    return;
+  }
   /*loop goes thru the array and calls print_num*/
   for (i=0; i<n; i++)
   {
