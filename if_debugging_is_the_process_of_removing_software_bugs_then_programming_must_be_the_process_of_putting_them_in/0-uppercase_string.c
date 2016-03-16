@@ -1,5 +1,6 @@
 int print_char(char c);
 
+/*function that changes all lowercase letters of a string to uppercase.*/
 char *uppercase_string(char *s)
 {
   int i;
