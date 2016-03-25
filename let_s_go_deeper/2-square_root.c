@@ -1,4 +1,3 @@
-#include <stdio.h>
 int calculate_sqrt(int n, int i, int c);
 
 int square_root(int n)
@@ -16,6 +15,6 @@ int calculate_sqrt(int n, int i, int c)
     n-=i;
     i+=2;
     c++;
-    calculate_sqrt(n, i, c);
+    return calculate_sqrt(n, i, c);
   }
 }

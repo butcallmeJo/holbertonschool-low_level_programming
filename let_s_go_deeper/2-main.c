@@ -11,7 +11,7 @@ int main(void)
   printf("%d\n", r);
   r = square_root(16);
   printf("%d\n", r);
-  r = square_root(17);
+  r = square_root(100000000);
   printf("%d\n", r);
   r = square_root(25);
   printf("%d\n", r);
