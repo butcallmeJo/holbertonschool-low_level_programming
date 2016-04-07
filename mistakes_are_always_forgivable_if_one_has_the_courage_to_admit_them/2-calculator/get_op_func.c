@@ -1,8 +1,4 @@
-int op_mod(int, int);
-int op_mul(int, int);
-int op_add(int, int);
-int op_sub(int, int);
-int op_div(int, int);
+#include "calculator.h"
 
 int (*get_op_func(char c))(int, int) {
   int (*func_ptr_array[256])(int, int);

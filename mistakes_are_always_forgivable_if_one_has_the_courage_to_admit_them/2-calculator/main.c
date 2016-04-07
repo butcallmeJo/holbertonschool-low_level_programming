@@ -1,8 +1,11 @@
-#include <stdio.h>
-
-int (*get_op_func(char c))(int, int);
+#include "calculator.h"
 
 int main(int argc, char *argv[]) {
+  if (argc != 4) {
+    print_char('X');
+    print_char('\n');
+    return 1;
+  }
   int i;
   char * op = argv[2];
   char * a = argv[1];
@@ -11,6 +14,7 @@ int main(int argc, char *argv[]) {
 
   op_func = get_op_func(*op);
   i = op_func(atoi(a), atoi(b));
-  printf("%d\n", i);
+  print_number(i);
+  print_char('\n');
   return 0;
 }
