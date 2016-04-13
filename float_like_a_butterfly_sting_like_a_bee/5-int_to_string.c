@@ -2,17 +2,17 @@
 #include <stdio.h>
 #include <string.h>
 
-char *do_work(int, char*);
+char *divide_and_conquer(int, char*);
 
 char  *add_digit(char digit, char *str) {
-  int counter = 2; /* nonzero because null terminator and extension */
+  int c = 2; /* nonzero because null terminator and extension */
   char *strc = str;
   while (*str != 0) {
-    counter++;
+    c++;
     str++;
   }
-  *(strc+counter-2) = digit;
-  str = malloc(sizeof(char)*(counter));
+  *(strc+c-2) = digit;
+  str = malloc(sizeof(char)*(c));
   str = strcpy(str, strc);
   return str;
 }
@@ -31,12 +31,12 @@ char *int_to_string(int n)
     str = add_digit('0', str);
 	}
 	else {
-		str = do_work(n, str);
+		str = divide_and_conquer(n, str);
 	}
   return str;
 }
 
-char *do_work(int n, char *str)
+char *divide_and_conquer(int n, char *str)
 {
 	int divisor = 1;
 	int a = n;
