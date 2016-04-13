@@ -6,7 +6,10 @@ char *string_nconcat(char *s1, char *s2, int n) {
   unsigned int i, size1, size2;
   for (size1=0; s1[size1]!=0; size1++) {}
   for (size2=0; s2[size2]!=0; size2++) {}
-  str = malloc(size1+size2+1);
+  str = malloc(size1+n+1);
+  if (str == NULL) {
+    return NULL;
+  }
   for (i=0; i<size1; i++) {
     /* looping over s1 */
     str[i] = *(s1+i);
