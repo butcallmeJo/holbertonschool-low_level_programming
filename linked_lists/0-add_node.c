@@ -16,8 +16,10 @@ int add_node(List **list, char *content) {
   /*error checking*/
   if (node == NULL) return (1);
 
-  /*creates a cpy of content string to separate them in*/
+  /*creates a cpy of content string to separate them in mem*/
   str = copy_string(content);
+
+  /*fills in the content of the node and points to the next node*/
   node->str = str;
   node->next = *list;
   *list = node;
