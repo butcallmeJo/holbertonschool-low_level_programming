@@ -21,8 +21,9 @@ int add_node(List **list, char *content) {
 
   /*fills in the content of the node and points to the next node*/
   node->str = str;
-  node->next = *list;
-  *list = node;
+  *list = node->next;
+  node->next = NULL;
+
   return (0);
 }
 
