@@ -2,39 +2,27 @@
 #include "list.h"
 
 int print_char(char c);
-void print_string(char *str);
+void print_element(char *str);
 void print_list(List *list);
-/* The function print_string takes
- * an pointer to a char
- * and prints a string.
- * It takes a argument (char *) and
- * returns nothing (void)
- */
-void print_string(char *str)
-{
-  int i=0;
-
-  while(*(str+i)!='\0')
-    {
-      print_char(*(str+i));
-      i++;
-    }
-}
 
 void print_list(List *list)
 {
-
-  List *node;
-  node = list;
-  while(node != NULL)
-    {
-      print_string(node->str);
-      if(node->next != NULL)
-	{
-	  print_char(',');
-	  print_char(' ');
-	}
-      node = node->next;
-    }
+  List *node = list;
+  while(node != NULL) {
+    print_element(node->str);
+    if(node->next != NULL) {
+  	  print_char(',');
+  	  print_char(' ');
+  	}
+    node = node->next;
+  }
   print_char('\n');
+}
+
+void print_element(char *str)
+{
+  int i;
+  for(i=0; str[i]!='\0'; i++) {
+    print_char(str[i]);
+  }
 }
