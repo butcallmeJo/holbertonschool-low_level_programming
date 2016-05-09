@@ -6,25 +6,37 @@ char *copy_string(char *);
 
 /*func to add node to a list at the begining of list*/
 int add_node(List **list, char *content) {
-  /*creates node*/
+  /*creates node and head of node*/
+  List *head;
   List *node;
-  /*init new str*/
-  char * str;
+  head = *list;
 
-  /*allocates mem to node so same size as List*/
-  node = malloc(sizeof(List));
-  /*error checking*/
-  if (node == NULL) return (1);
-
-  /*creates a cpy of content string to separate them in mem*/
-  str = copy_string(content);
-
-  /*fills in the content of the node and points to the next node*/
-  node->str = str;
-  *list = node->next;
-  node->next = NULL;
-
-  return (0);
+  /*creating the first node if none exists*/
+  if (head == NULL) {
+    head = malloc(sizeof(List));
+    if(head == NULL) return(1);
+    else {
+      head->str = copy_string(content);
+      head->next = NULL;
+      *list = head;
+      return (0);
+    }
+  }
+  /*else add a node*/
+  else {
+    node = *list;
+    while (node->next!=NULL) {
+      node = node->next;
+    }
+    node->next = malloc(sizeof(List));
+    if (node->next == NULL) return(1);
+    else {
+      node->next->str = copy_string(content);
+      node->next->next = NULL;
+      return(0);
+    }
+  }
+  return (1);
 }
 
 /*func that gets the length of the string in parameter*/
