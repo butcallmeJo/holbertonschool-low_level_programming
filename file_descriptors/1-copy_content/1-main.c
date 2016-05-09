@@ -3,26 +3,31 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <stdlib.h>
-
-int print_char(char c);
+#include <stdio.h>
 
 int main(int argc, char *argv[]) {
-  int i;
-  int fd;
+  int fd, fd2, size;
   char *buffer;
   struct stat fileStat;
 
-  if (argc != 2) return 1;
+  if (argc != 3) return 1;
   if (stat(argv[1],&fileStat) < 0) return 1;
   buffer = malloc(sizeof(fileStat.st_size));
+  size = fileStat.st_size;
+  printf("%d\n", size);
+  /*if (stat(argv[2],&fileStat) < 0) {
+
+  }*/
+
   fd = open(argv[1], O_RDONLY);
+  fd2 = open(argv[2], O_CREAT | O_WRONLY, 0644);
 
-  read(fd, buffer, fileStat.st_size);
+  read(fd, buffer, size);
+  write(fd2, buffer, size);
 
-  for (i=0; i<fileStat.st_size; i++) {
-    print_char(buffer[i]);
-  }
-  close(fd);
   free(buffer);
+  close(fd);
+  close(fd2);
+
   return 0;
 }
