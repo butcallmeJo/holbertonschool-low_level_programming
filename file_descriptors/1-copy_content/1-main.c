@@ -13,9 +13,6 @@ int main(int argc, char *argv[]) {
   if (stat(argv[1],&fileStat) < 0) return 1;
   buffer = malloc(fileStat.st_size);
   size = fileStat.st_size;
-  if (stat(argv[2],&fileStat) < 0) {
-
-  }
 
   fd = open(argv[1], O_RDONLY);
   fd2 = open(argv[2], O_CREAT | O_WRONLY, 0666);
