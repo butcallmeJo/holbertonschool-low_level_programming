@@ -3,7 +3,6 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <stdlib.h>
-#include <stdio.h>
 
 int main(int argc, char *argv[]) {
   int fd, fd2, size;
@@ -12,9 +11,8 @@ int main(int argc, char *argv[]) {
 
   if (argc != 3) return 1;
   if (stat(argv[1],&fileStat) < 0) return 1;
-  buffer = malloc(sizeof(fileStat.st_size));
+  buffer = malloc(fileStat.st_size);
   size = fileStat.st_size;
-  printf("%d\n", size);
   /*if (stat(argv[2],&fileStat) < 0) {
 
   }*/
