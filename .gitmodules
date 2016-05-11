@@ -1,0 +1,3 @@
+[submodule "hoshell"]
+	path = hoshell
+	url = git@github.com:johnSerrano/hoshell.git
