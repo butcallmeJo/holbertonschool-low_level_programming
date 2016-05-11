@@ -7,11 +7,14 @@
 
 int print_char(char);
 
+/*function that prints the permissions of a file or directory*/
 int main(int argc, char *argv[]) {
   struct stat fileStat;
 
+  /*error and parameter checking*/
   if (argc != 2) return 1;
   else if (lstat(argv[1], &fileStat) == -1) return 1;
+  /*prints out all the permissions user case if statements*/
   else {
     print_char((S_ISLNK(fileStat.st_mode)) ? 'l' :(S_ISDIR(fileStat.st_mode)) ? 'd' : '-');
     print_char((fileStat.st_mode & S_IRUSR) ? 'r' : '-');
