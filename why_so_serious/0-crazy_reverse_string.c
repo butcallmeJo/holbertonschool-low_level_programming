@@ -29,6 +29,10 @@ void crazy_reverse_string(char *s)
      {
           /* your code goes here only */
           /* you can only use s, l and i to complete the task */
+          s[i] ^= s[l-1-i];
+          s[l-1-i] ^= s[i];
+          s[i] ^= s[l-1-i];
+
           i++;
      }
 }
@@ -43,4 +47,3 @@ int main(void)
      printf("After: %s\n", s);
      return (0);
 }
-Status API Training Shop Blog About
