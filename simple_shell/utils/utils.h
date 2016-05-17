@@ -1,0 +1,28 @@
+#include <dirent.h>
+char *int_to_string(int n);
+int string_to_int(char *s);
+int len_command(char **command);
+int strings_compare(char *s1, const char *s2);
+void cmd_exit(char **command, char ***env);
+char *string_copy(char *dest, char *src);
+char *read_line(int fd);
+char **string_split(char *ptr, char seperator);
+int print_env();
+int str_len(char *str);
+void free_command(char **command);
+char **init_env(char ***env);
+void set_env(char *name, char *valuei, char ***env);
+void cd(char **command, char ***env);
+char *get_env(char *check, char **env);
+char *str_cat(char *dest, char *src);
+char *str_ncat(char *dest, char *src, int len);
+void pwd();
+char *get_wd();
+void *ret_correct_path(char *cmd, char **env);
+int check_path(char *cmd_cpy);
+void update_status(int status, char ***env);
+void print_status(char **env);
+char *get_correct_cmd_path(char **path, char *cmd_cpy, char *cmd);
+int is_root(DIR *dir, unsigned int self_inode);
+unsigned int get_self_inode(DIR *dir);
+int is_dir(char *file);
