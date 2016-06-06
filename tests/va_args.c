@@ -24,7 +24,7 @@ int do_sum(int nb, ...) {
 }
 
 /*
-char @
+char A
 string Holberton
 int 98
 int 402
