@@ -19,6 +19,5 @@ int main(void)
   printf("LONG INTEGER{%ld}\n", li);
   printf("ADDRESS{%p}\n", addr);
   printf("HEXADECIMAL{%X}\n", 94111);
-  // printf("UNKNOWN SPECIFIER{%Q}\n", len);
   return (0);
 }
