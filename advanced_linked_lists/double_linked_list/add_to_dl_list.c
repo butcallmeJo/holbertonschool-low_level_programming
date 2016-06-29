@@ -2,8 +2,10 @@
 #include <string.h>
 #include "list.h"
 
+/*
 int add_begin_dl_list(List **list, char *str);
 int add_end_dl_list(List **list, char *str);
+*/
 
 int add_end_dl_list(List **list, char *str)
 {
@@ -41,9 +43,8 @@ int add_end_dl_list(List **list, char *str)
 
 int add_begin_dl_list(List **list, char *str)
 {
-	/*init new node and ptr*/
+	/*init new node*/
 	List *node;
-	List *ptr;
 
 	/*error checking and malloc node*/
 	if (list == NULL) return 1;
