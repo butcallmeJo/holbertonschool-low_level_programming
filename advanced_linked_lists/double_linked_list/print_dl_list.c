@@ -13,6 +13,7 @@ void print_dl_list(List *list)
 	ptr = list;
 	if (ptr == NULL) return;
 
+	/*looping over the list*/
 	while (ptr != NULL) {
 		print_string(ptr->str);
 		print_char('\n');
