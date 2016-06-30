@@ -5,6 +5,7 @@
 int add_end_cl_list(List **, char *);
 int add_begin_cl_list(List **, char *);
 void print_cl_list(List *);
+void free_dl_list(List *list);
 
 int main(void)
 {
@@ -19,6 +20,7 @@ int main(void)
     return (1);
   printf("FIRST EXAMPLE:\n");
   print_cl_list(list);
+  free_dl_list(list);
   list = NULL;
   if (add_begin_cl_list(&list, "Holberton") == 1 ||
       add_begin_cl_list(&list, "School") == 1 ||
@@ -28,5 +30,6 @@ int main(void)
     return (1);
   printf("SECOND EXAMPLE:\n");
   print_cl_list(list);
+  free_dl_list(list);
   return (0);
 }
