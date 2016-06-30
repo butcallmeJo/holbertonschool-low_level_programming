@@ -5,6 +5,7 @@
 int add_end_dcl_list(List **, char *);
 int add_begin_dcl_list(List **, char *);
 void print_dcl_list(List *);
+void free_dcl_list(List *);
 
 int main(void)
 {
@@ -19,6 +20,7 @@ int main(void)
     return (1);
   printf("FIRST EXAMPLE:\n");
   print_dcl_list(list);
+  free_dcl_list(list);
   list = NULL;
   if (add_begin_dcl_list(&list, "Holberton") == 1 ||
       add_begin_dcl_list(&list, "School") == 1 ||
@@ -28,5 +30,6 @@ int main(void)
     return (1);
   printf("SECOND EXAMPLE:\n");
   print_dcl_list(list);
+  free_dcl_list(list);
   return (0);
 }

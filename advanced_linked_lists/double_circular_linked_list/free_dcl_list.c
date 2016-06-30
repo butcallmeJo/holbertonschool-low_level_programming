@@ -2,7 +2,7 @@
 #include <string.h>
 #include "list.h"
 
-void free_cl_list(List *list)
+void free_dcl_list(List *list)
 {
 	/*init node to go thru list freeing eveything*/
 	List *node;

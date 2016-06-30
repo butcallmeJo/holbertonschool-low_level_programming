@@ -5,7 +5,7 @@
 int add_end_cl_list(List **, char *);
 int add_begin_cl_list(List **, char *);
 void print_cl_list(List *);
-void free_dl_list(List *list);
+void free_cl_list(List *list);
 
 int main(void)
 {
