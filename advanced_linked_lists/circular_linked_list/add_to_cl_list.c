@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "list.h"
 
 int add_begin_cl_list(List **list, char *str)
@@ -14,18 +14,24 @@ int add_begin_cl_list(List **list, char *str)
 	if (node == NULL) return 1;
 	if (str == NULL) return 1;
 
+	if (*list == NULL) {
+		*list = node;
+	}
+	else {
+		/*linking last node to first*/
+		ptr = *list;
+		while (ptr->next != *list) {
+			ptr = ptr->next;
+		}
+	}
+
 	/*contents of new node*/
 	node->str = strdup(str);
 	if (node->str == NULL) return 1;
-	node->next = list;
-	list = node;
+	node->next = *list;
+	*list = node;
 
-	/*linking last node to first*/
-	ptr = *list;
-	while (ptr->next != NULL) {
-		ptr = ptr->next;
-	}
-	ptr->next = list;
+	ptr->next = *list;
 
 	return 0;
 }
@@ -45,13 +51,19 @@ int add_end_cl_list(List **list, char *str)
 	/*contents of new node*/
 	node->str = strdup(str);
 	if (node->str == NULL) return 1;
-	node->next = list;
 
-	/*going thru list to get last node and link to new node*/
-	ptr = *list;
-	while (ptr->next != NULL) {
-		ptr = ptr->next;
+	/*if list empty, list should point to node*/
+	if (*list == NULL) {
+		*list = node;
 	}
-	ptr->next = node;
+	/*else going thru list to get last node and link to new node*/
+	else {
+		ptr = *list;
+		while (ptr->next != *list) {
+			ptr = ptr->next;
+		}
+		ptr->next = node;
+	}
+	node->next = *list;
 	return 0;
 }
