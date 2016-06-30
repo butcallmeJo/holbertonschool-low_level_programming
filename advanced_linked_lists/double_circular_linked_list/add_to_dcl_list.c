@@ -30,10 +30,11 @@ int add_end_dcl_list(List **list, char *str)
 		while (ptr->next != *list) {
 			ptr = ptr->next;
 		}
+		node->next = *list;
 		node->prev = ptr;
 		ptr->next = node;
+		(*list)->prev = node;
 	}
-	node->next = *list;
 	return 0;
 }
 
@@ -48,10 +49,13 @@ int add_begin_dcl_list(List **list, char *str)
 	node = malloc(sizeof(List));
 	if (node == NULL) return 1;
 	if (str == NULL) return 1;
-	/*if list empty, *list should be node, and should point there too*/
+
+	/*contents of new node*/
+	node->str = strdup(str);
+	if (node->str == NULL) return 1;
+
 	if (*list == NULL) {
 		*list = node;
-		node->prev = *list;
 	}
 	else {
 		/*linking last node to first*/
@@ -59,16 +63,11 @@ int add_begin_dcl_list(List **list, char *str)
 		while (ptr->next != *list) {
 			ptr = ptr->next;
 		}
-
 	}
-
-	/*contents of new node*/
-	node->str = strdup(str);
-	if (node->str == NULL) return 1;
+	node->prev = (*list)->prev;
+	(*list)->prev = node;
 	node->next = *list;
 	*list = node;
-	node->prev = ptr;
 	ptr->next = *list;
-
 	return 0;
 }

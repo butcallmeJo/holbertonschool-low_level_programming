@@ -30,9 +30,7 @@ int add_begin_cl_list(List **list, char *str)
 	if (node->str == NULL) return 1;
 	node->next = *list;
 	*list = node;
-
 	ptr->next = *list;
-
 	return 0;
 }
 
