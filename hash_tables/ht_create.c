@@ -4,7 +4,7 @@
 HashTable *ht_create(unsigned int size)
 {
 	/*init counter and hashtable*/
-	int i;
+	unsigned int i;
 	HashTable *ht = NULL;
 	/*error checking and allocating mem*/
 	if (size < 1) return NULL;
