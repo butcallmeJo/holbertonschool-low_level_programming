@@ -11,12 +11,12 @@ HashTable *ht_create(unsigned int size)
 	if ((ht = malloc(sizeof(HashTable))) == NULL) {
 		return NULL;
 	}
-	if ((ht->table = malloc(sizeof(List *) * size)) == NULL) {
+	if ((ht->array = malloc(sizeof(List *) * size)) == NULL) {
 		return NULL;
 	}
 	/*loop through */
 	for(i = 0; i < size; i++) {
-		ht->table[i] = NULL;
+		ht->array[i] = NULL;
 	}
 	ht->size = size;
 	return ht;
