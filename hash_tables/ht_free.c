@@ -19,5 +19,5 @@ void ht_free(HashTable *hashtable)
 	}
 	free(hashtable->array);
 	free(hashtable);
-	return;
+	return
 }
