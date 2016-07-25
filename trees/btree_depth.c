@@ -11,5 +11,41 @@
  */
 
 #include "tree.h"
-#include <stdlib.h>
-#include <string.h>
+
+/**
+ * btree_depth - returns depth of a tree
+ * @tree: first node of the BTree Stuct.
+ */
+
+int btree_depth(BTree *tree)
+{
+	int depth = 0;
+
+	if (tree == NULL)
+		return -1;
+	return find_depth(tree, depth);
+}
+
+/**
+ * find_depth - returns depth of a tree
+ * @tree: node of the BTree Stuct.
+ * @depth: depth of the tree
+ */
+
+int find_depth(BTree *tree, depth)
+{
+	int left_depth;
+	int right_depth;
+
+	if (tree->left == NULL && tree->right == NULL)
+		return depth;
+	else if (!tree->right)
+		return find_depth(tree->left, depth++);
+	else if (!tree->left)
+		return find_depth(tree->right, depth++);
+	left_depth = find_depth(tree->left, depth + 1);
+	right_depth = find_depth(tree->right, depth + 1);
+	if (left_depth <= right_depth)
+		return right_depth;
+	return left_depth;
+}

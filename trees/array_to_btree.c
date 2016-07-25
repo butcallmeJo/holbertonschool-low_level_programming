@@ -17,6 +17,12 @@
 add_node(BTree**, char*);
 traverse_tree(BTree**, char*);
 
+/**
+ * array_to_btree: function that coordinates the creation of binary tree
+ * from an array.
+ * @array: array.
+ */
+
 BTree *array_to_btree(char **array)
 {
 	Btree *tree = NULL;

@@ -14,6 +14,11 @@
 #include "tree.h"
 #include <stdlib.h>
 
+/**
+ * btree_free: function that frees a binary tree.
+ * @tree: first node of the BTree Stuct.
+ */
+
 void btree_free(BTree *tree)
 {
 	if (tree == NULL)
