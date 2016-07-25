@@ -39,9 +39,9 @@ int find_depth(BTree *tree, depth)
 
 	if (tree->left == NULL && tree->right == NULL)
 		return depth;
-	else if (!tree->right)
+	else if (tree->right == NULL)
 		return find_depth(tree->left, depth++);
-	else if (!tree->left)
+	else if (tree->left == NULL)
 		return find_depth(tree->right, depth++);
 	left_depth = find_depth(tree->left, depth + 1);
 	right_depth = find_depth(tree->right, depth + 1);
