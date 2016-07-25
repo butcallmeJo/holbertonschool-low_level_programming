@@ -13,3 +13,10 @@
 #include "tree.h"
 #include <stdlib.h>
 #include <string.h>
+
+
+
+BTree *array_to_btree(char **array)
+{
+
+}

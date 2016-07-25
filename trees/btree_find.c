@@ -25,9 +25,9 @@ BTree *find_str(BTree *tree, char *str);
 BTree *btree_find(BTree *tree, char *str)
 {
 	if (tree == NULL || str NULL)
-		return NULL;
+		return (NULL);
 	else
-		return find_str(tree, str);
+		return (find_str(tree, str));
 }
 
 /**
@@ -39,11 +39,11 @@ BTree *btree_find(BTree *tree, char *str)
 BTree *find_str(BTree *tree, char *str)
 {
 	if (tree == NULL)
-		return NULL;
+		return (NULL);
 	if (strcmp(str, tree->str) == 0)
-		return tree;
+		return (tree);
 	else if (strcmp(str, tree->str) < 0)
-		return find_str(tree->left, str);
+		return (find_str(tree->left, str));
 	else
-		return find_str(tree->right, str);
+		return (find_str(tree->right, str));
 }

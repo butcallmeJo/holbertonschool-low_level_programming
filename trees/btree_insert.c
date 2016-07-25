@@ -14,8 +14,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-add_node(BTree **tree, char *data);
-traverse_tree(BTree **tree, char *data);
+add_node(BTree**, char*);
+traverse_tree(BTree**, char*);
 
 /**
  * btree_insert: function that coordinates the insertion of
@@ -27,11 +27,11 @@ traverse_tree(BTree **tree, char *data);
 int btree_insert(BTree **tree, char *data)
 {
 	if (tree == NULL || data == NULL)
-		return 1; /*returns error if tree and data not good*/
+		return (1); /*returns error if tree and data not good*/
 	else if (*tree == NULL)
-		return add_node(tree, data); /*returns 0 if it worked. 1 otherwise*/
+		return (add_node(tree, data)); /*returns 0 if it worked.*/
 	else
-		return traverse_tree(tree, data); /*returns 0 if it worked. 1 otherwise*/
+		return (traverse_tree(tree, data)); /*returns 0 if it worked.*/
 }
 
 /**
@@ -46,14 +46,14 @@ int add_node(BTree **tree, char *data)
 
 	node = malloc(sizeof(BTree))
 	if (node == NULL)
-		return 1;
+		return (1);
 	node->str = strdup(data)
 	if (node->str == NULL)
-		return 1;
+		return (1);
 	node->left = NULL;
 	node->right = NULL;
 	*tree = node;
-	return 0;
+	return (0);
 }
 
 /**
@@ -69,15 +69,15 @@ int traverse_tree(BTree **tree, char *data)
 	if (strcmp(data, tree->str) < 0)
 	{
 		if (tree->left == NULL)
-			return add_node(&(tree->left), data);
+			return (add_node(&(tree->left), data));
 		else
-			return traverse_tree(tree->left, data);
+			return (traverse_tree(tree->left, data));
 	}
 	else
 	{
 		if (tree->right == NULL)
-			return add_node(&(tree->right), data);
+			return (add_node(&(tree->right), data));
 		else
-			return traverse_tree(tree->right, data);
+			return (traverse_tree(tree->right, data));
 	}
 }
