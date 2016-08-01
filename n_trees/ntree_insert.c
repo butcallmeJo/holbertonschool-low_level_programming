@@ -23,5 +23,69 @@
 
 int ntree_insert(NTree **tree, char **parents, char *data)
 {
+	int i;
+	NTree *parent
+	if (tree == NULL || data == NULL)
+		return (1); /*returns error if tree or data not good*/
+	else if (*tree == NULL)
+		*tree = add_node(data);
+		return 0;
+	else
+		parent = *tree;
+		for (i = 1; parents[i]; i++)
+		{
+			parent = traverse_tree(parent->children, parents[i]);
+		}
+		if (parent == NULL) return -1;
+		parent->children = add_tree(parent->children);
+		parent->children->node = add_node(data);
+		return 0;
+}
 
+/**
+ * add_node -
+ * @data:
+ * Description:
+ */
+NTree *add_node(char *data)
+{
+	NTree *new;
+
+	new = malloc(sizeof(NTree));
+	new->str = strdup(data);
+	new->children = NULL;
+	return new;
+}
+
+/**
+ * traverse_tree -
+ * @list:
+ * @child:
+ * Description:
+ */
+NTree *traverse_tree(List *list, char *child)
+{
+	if (!list || !list->node)
+		return NULL;
+	if (!list->node->str || !child)
+		return NULL;
+	if (strcmp(list->node->str, child) == 0)
+		return list->node;
+
+	return traverse_tree(list->next, child);
+}
+
+/**
+ * add_tree -
+ * @first:
+ * Description:
+ */
+List *add_tree(List *first)
+{
+	List *new;
+
+	new = malloc(sizeof(List));
+	new->node = NULL;
+	new->next = first;
+	return new;
 }
