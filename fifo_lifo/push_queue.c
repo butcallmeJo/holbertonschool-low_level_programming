@@ -16,9 +16,9 @@
 
 /**
  * push_queue -
- * @queue:
- * @string:
- * Description:
+ * @queue: The Queue to which we push another node
+ * @string: The string to copy to the new node at the end of queue
+ * Description: function that pushes an element to the rear of a queue
  */
 int push_queue(Queue **queue, char *string)
 {
