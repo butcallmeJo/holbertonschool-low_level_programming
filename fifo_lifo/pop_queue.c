@@ -26,7 +26,7 @@ char *pop_queue(Queue **queue)
 	char *ret_str;
 
 	ptr = *queue; /*ptr needs to start at beginning*/
-	if (ptr == NULL || ptr->str == NULL) /*if queue not existing, creates it*/
+	if (ptr == NULL || ptr->str == NULL) /**/
 	{
 		return (NULL);
 	}

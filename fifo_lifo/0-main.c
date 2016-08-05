@@ -5,6 +5,7 @@
 void print_queue(const Queue *);
 
 int push_queue(Queue **, char *);
+void free_queue(Queue *);
 
 int main(int ac, char **av)
 {
@@ -19,5 +20,6 @@ int main(int ac, char **av)
                 ++i;
         }
         print_queue(queue);
+		free_queue(queue);
         return (0);
 }

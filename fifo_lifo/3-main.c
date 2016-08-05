@@ -7,6 +7,7 @@ void print_stack(const Stack *);
 
 int push_stack(Stack **, char *);
 char *pop_stack(Stack **);
+void free_stack(Stack *);
 
 int main(int ac, char **av)
 {
@@ -31,5 +32,6 @@ int main(int ac, char **av)
         str = pop_stack(&stack);
         printf("%s\n", str);
         print_stack(stack);
+		free_stack(stack);
         return (0);
 }

@@ -25,7 +25,7 @@ char *pop_stack(Stack **stack)
 	char *ret_str;
 
 	ptr = *stack; /*ptr needs to start at beginning*/
-	if (ptr == NULL || ptr->str == NULL) /*if stack not existing, creates it*/
+	if (ptr == NULL || ptr->str == NULL) /**/
 	{
 		return (NULL);
 	}

@@ -7,6 +7,7 @@ void print_queue(const Queue *);
 
 int push_queue(Queue **, char *);
 char *pop_queue(Queue **);
+void free_queue(Queue *);
 
 int main(int ac, char **av)
 {
@@ -31,5 +32,6 @@ int main(int ac, char **av)
         str = pop_queue(&queue);
         printf("%s\n", str);
         print_queue(queue);
+		free_queue(queue);
         return (0);
 }

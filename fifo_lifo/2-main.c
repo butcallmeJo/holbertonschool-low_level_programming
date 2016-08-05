@@ -6,6 +6,7 @@
 void print_stack(const Stack *);
 
 int push_stack(Stack **, char *);
+void free_stack(Stack *);
 
 int main(int ac, char **av)
 {
@@ -20,5 +21,6 @@ int main(int ac, char **av)
                 ++i;
         }
         print_stack(stack);
+		free_stack(stack);
         return (0);
 }
