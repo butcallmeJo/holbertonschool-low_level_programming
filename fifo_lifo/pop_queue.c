@@ -32,9 +32,10 @@ char *pop_queue(Queue **queue)
 	}
 	else /**/
 	{
-		ret_str = ptr->str;
+		ret_str = strdup(ptr->str);
 		ptr->str = NULL;
 		*queue = ptr->next;
+		free(ptr->str);
 		free(ptr);
 	}
 	return (ret_str);
