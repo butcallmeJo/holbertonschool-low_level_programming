@@ -14,6 +14,10 @@
 #include <stdlib.h>
 #include <string.h>
 
+NTree *add_node(char *data);
+NTree *traverse_tree(List *list, char *child);
+List *add_tree(List *first);
+
 /**
  * ntree_insert: function that coordinates the insertion of
  * a node in a n-ary tree.
@@ -24,22 +28,27 @@
 int ntree_insert(NTree **tree, char **parents, char *data)
 {
 	int i;
-	NTree *parent
+	NTree *parent;
 	if (tree == NULL || data == NULL)
 		return (1); /*returns error if tree or data not good*/
 	else if (*tree == NULL)
+	{
 		*tree = add_node(data);
 		return 0;
+	}
 	else
+	{
 		parent = *tree;
 		for (i = 1; parents[i]; i++)
 		{
 			parent = traverse_tree(parent->children, parents[i]);
 		}
-		if (parent == NULL) return -1;
+		if (parent == NULL)
+			return -1;
 		parent->children = add_tree(parent->children);
 		parent->children->node = add_node(data);
 		return 0;
+	}
 }
 
 /**
