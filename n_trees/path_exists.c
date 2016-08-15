@@ -10,9 +10,9 @@
  * @brief File that check if a path is present in a N-ary tree.
  */
 
- #include "tree.h"
- #include <stdlib.h>
- #include <string.h>
+#include "tree.h"
+#include <stdlib.h>
+#include <string.h>
 
 NTree *traverse_path(List *list, char *child);
 
