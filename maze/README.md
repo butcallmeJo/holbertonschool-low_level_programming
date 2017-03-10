@@ -14,6 +14,6 @@ Abstract:
 TODO:
 =====
   - ALL:  
-    [ ] README.md  
-    [ ] Makefile  
+    [] README.md  
+    [] Makefile  
 
